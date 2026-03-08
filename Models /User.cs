@@ -1,14 +1,17 @@
-namespace SecureRateLimitAPI.Models;
-
-public class User
+namespace SecureRateLimitAPI.Models
 {
-public int Id { get; set; }
+    public class User
+    {
+        public int Id { get; set; }
 
-public string Username { get; set; }
+        public string Username { get; set; }
 
-public string PasswordHash { get; set; }
+        public string PasswordHash { get; set; }
 
-public string Role { get; set; }
+        public int RoleId { get; set; }
 
-public List<RefreshToken> RefreshTokens { get; set; }
+        public Role Role { get; set; }
+
+        public List<RefreshToken> RefreshTokens { get; set; }
+    }
 }
