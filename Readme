@@ -1,0 +1,59 @@
+# Secure Rate Limit API
+
+ASP.NET Core Web API project implementing:
+
+- JWT Authentication
+- Refresh Tokens
+- Role Based Authorization
+- Redis Rate Limiting
+- API Logging Middleware
+- SQL Server with EF Core
+
+## Tech Stack
+
+ASP.NET Core  
+Redis  
+SQL Server  
+JWT Authentication  
+Entity Framework Core  
+
+## Features
+
+Authentication system using JWT
+
+Refresh token support
+
+Role based authorization
+
+Redis rate limiting (100 requests/min)
+
+API request logging middleware
+
+## Setup
+
+1 Clone repo
+
+2 Setup SQL Server connection in appsettings.json
+
+3 Run migrations
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+4 Run project
+
+dotnet run
+
+## Endpoints
+
+POST /api/auth/register
+
+POST /api/auth/login
+
+GET /api/test/user (Requires Auth)
+
+GET /api/test/admin (Admin only)
+
+## Rate Limiting
+
+100 requests per minute per IP using Redis
